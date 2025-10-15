@@ -1,0 +1,7 @@
+REQUEST DATE : July 23rd 2025, 12:10:20 pm
+API URL : http://localhost:5050/api/front/user/update_profile
+API METHOD : POST
+API PARAMETER : {"name":"Samay Bhavsar"}
+API Headers : {"authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiI5MjY1MTk2NTI0IiwiY291bnRyeV9jb2RlIjoiKzkxIiwiaWQiOiI2ODc3N2QzZGFlZGU2YjJiOWY5NjVkMGUiLCJ2ZXJzaW9uIjowLCJpYXQiOjE3NTMyNDc2NjQsImV4cCI6MTc1NDExMTY2NH0.yidChc2hgM9d4IvzxPVG3yGktQAR5rWjLzwHoUfA4Nk","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"f9ed8b89-d730-4e0e-a251-945bbd3fa7fe","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-type":"multipart/form-data; boundary=--------------------------619022146341116989727642","content-length":"778709"}
+Error : ReferenceError: profilePic is not defined
+

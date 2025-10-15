@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✅ Booking Confirmation</title>
+</head>
+
+<body>
+    <div style="
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        background-color: #f9fff1; /* light green background */
+      ">
+        <div style="
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          ">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="{{logo}}" alt="SportGrid Logo" style="width: 160px; height: auto; margin-bottom: 20px;" />
+                <h1 style="color: #588703; margin: 0; font-size: 28px;">🎉 Your Booking is Confirmed!</h1>
+            </div>
+
+            <h2 style="color: #333; font-size: 20px; margin-bottom: 20px;">Hello {{name}} 👋,</h2>
+
+            <p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+                Thank you for booking with <strong>SportGrid</strong>! Here are the details of your reservation:
+            </p>
+
+            <!-- Booking Details Table -->
+            <div style="
+                background-color: #f9fff1;
+                border-left: 4px solid #ccf56c;
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 25px;
+              ">
+                <table style="width:100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">📋
+                            Booking ID:</td>
+                        <td style="color:#555; padding:6px 0;">{{booking_id}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">🏢
+                            Club:</td>
+                        <td style="color:#555; padding:6px 0;">{{club_name}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">⚽
+                            Sport:</td>
+                        <td style="color:#555; padding:6px 0;">{{sport_name}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">🏟️
+                            Court:</td>
+                        <td style="color:#555; padding:6px 0;">{{court_name}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">📅
+                            Date:</td>
+                        <td style="color:#555; padding:6px 0;">{{booked_date}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">⏰ Time
+                            Slot:</td>
+                        <td style="color:#555; padding:6px 0;">{{start_time}} - {{end_time}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">
+                            💳 Payment Method:
+                        </td>
+                        <td style="color:#555; padding:6px 0;">{{payment_method}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold; color:#333; padding:6px 0; width:200px; white-space:nowrap;">💰
+                            Total Amount:</td>
+                        <td style="color:#555; padding:6px 0;">{{total_amount_paid}}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 25px;">
+                🛠️ Need to make changes to your booking? You can manage your reservation in the SportGrid app.
+            </p>
+
+
+            <div style="
+                border-top: 1px solid #eee;
+                padding-top: 20px;
+                margin-top: 30px;
+                text-align: center;
+              ">
+                <p style="font-size: 14px; color: #777; margin-bottom: 10px;">
+                    ❓ For any questions, please contact our support team at
+                    <strong style="color:#588703;">support@sportgrid.com</strong>
+                </p>
+                <p style="font-size: 14px; color: #777; margin: 0;">
+                    Best Regards, <br /><strong style="color:#588703;">SportGrid Team</strong> 🏆
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

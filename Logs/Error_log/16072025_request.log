@@ -1,0 +1,21 @@
+REQUEST DATE : July 16th 2025, 12:42:30 pm
+API URL : http://localhost:5050/api/user/login
+API METHOD : POST
+API PARAMETER : {"number":"567485654","country_code":"+91","otp":"123456"}
+API Headers : {"content-type":"application/json","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"b8dd25e1-7cac-400c-b76c-9c0ad801c5c1","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"75"}
+Error : ReferenceError: country_flag is not defined
+
+REQUEST DATE : July 16th 2025, 12:43:48 pm
+API URL : http://localhost:5050/api/user/login
+API METHOD : POST
+API PARAMETER : {"number":"567485654","country_code":"+91","otp":"123456"}
+API Headers : {"content-type":"application/json","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"371f6065-5aae-48c1-b09d-24ae095b78b2","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"75"}
+Error : ValidationError: name: Path `name` is required.
+
+REQUEST DATE : July 16th 2025, 6:59:10 pm
+API URL : http://localhost:5050/api/front/chat/create_group
+API METHOD : POST
+API PARAMETER : {"name":"Cosmos","members":"6877514613237b5560bed860,68777d3daede6b2b9f965d0e"}
+API Headers : {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiI1Njc0ODU2NTQiLCJjb3VudHJ5X2NvZGUiOiIrOTEiLCJpZCI6IjY4Nzc1MTQ2MTMyMzdiNTU2MGJlZDg2MCIsInZlcnNpb24iOjAsImlhdCI6MTc1MjY1MDA1NCwiZXhwIjoxNzUzNTE0MDU0fQ.xDAtLYskyaSpqnTrxIjTy04bbduZeKnqI6uw4jORn3k","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"c781a155-47c5-4346-9c8d-0f05988d2478","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"90"}
+Error : ReferenceError: mongoose is not defined
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎉 Club Admin Invitation</title>
+</head>
+
+<body>
+    <div style="
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+      ">
+        <h2 style="color: #333">Hello {{name}} 👋,</h2>
+
+        <p style="font-size: 16px; color: #555">
+            You've been invited to join the club
+            <strong>{{club_name}}</strong> as a <strong>Club Admin</strong> on
+            <strong>SportGrid</strong>! 🏆
+        </p>
+
+        <p style="font-size: 16px; color: #555">
+            🛠️ As a Club Admin, you’ll have access to tools for managing events,
+            courts, members, and more.
+        </p>
+
+        <p style="font-size: 16px; color: #555">
+            📍 <strong>Club Location:</strong> {{club_location}}
+        </p>
+
+        <p style="font-size: 16px; color: #555">
+            🚀 Click the button below to accept your invitation and begin your
+            journey:
+        </p>
+        <div style="text-align: center; margin: 30px 0">
+            <a href="{{URL}}api/user/club/invitation/accept/{{invitation_id}}" style="
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            display: inline-block;
+          ">
+                Accept Invitation
+            </a>
+        </div>
+
+        <p style="font-size: 16px; color: #555">
+            ❗ If you weren’t expecting this invitation, feel free to ignore this
+            email.
+        </p>
+
+        <p style="font-size: 16px; color: #555">
+            Best Regards,<br />
+            <strong>SportGrid Team</strong>
+        </p>
+    </div>
+</body>
+
+</html>

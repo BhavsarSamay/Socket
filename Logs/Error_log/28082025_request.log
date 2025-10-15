@@ -1,0 +1,35 @@
+REQUEST DATE : August 28th 2025, 12:15:41 pm
+API URL : http://localhost:5050/api/front/booking/add
+API METHOD : POST
+API PARAMETER : {"booking_date":"2025-09-05T14:30:00.000Z","price":1233}
+API Headers : {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiIyMzQ1Njc0NTY3IiwiY291bnRyeV9jb2RlIjoiKzkxIiwiaWQiOiI2ODgwODkxMzNjZjJlMDc4YWE3ZGUxNDkiLCJ2ZXJzaW9uIjowLCJpYXQiOjE3NTYzNjM1MjksImV4cCI6MTc1NzIyNzUyOX0.0-jS_odfvIZCu_TV2ZVRYpy-IEANUG1E4Rt71aZnV1E","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"071af26e-4d43-448a-9c00-3f942a7db2f5","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"}
+Error : ReferenceError: session is not defined
+
+REQUEST DATE : August 28th 2025, 12:17:32 pm
+API URL : http://localhost:5050/api/front/booking/add
+API METHOD : POST
+API PARAMETER : {"booking_date":"2025-09-05T14:30:00.000Z","price":1233}
+API Headers : {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiIyMzQ1Njc0NTY3IiwiY291bnRyeV9jb2RlIjoiKzkxIiwiaWQiOiI2ODgwODkxMzNjZjJlMDc4YWE3ZGUxNDkiLCJ2ZXJzaW9uIjowLCJpYXQiOjE3NTYzNjM1MjksImV4cCI6MTc1NzIyNzUyOX0.0-jS_odfvIZCu_TV2ZVRYpy-IEANUG1E4Rt71aZnV1E","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"37394494-fa98-4a85-9a54-ba5cfdb98849","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"}
+Error : ReferenceError: session is not defined
+
+REQUEST DATE : August 28th 2025, 12:18:26 pm
+API URL : http://localhost:5050/api/front/booking/add
+API METHOD : POST
+API PARAMETER : {"booking_date":"2025-09-05T14:30:00.000Z","price":1233}
+API Headers : {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiIyMzQ1Njc0NTY3IiwiY291bnRyeV9jb2RlIjoiKzkxIiwiaWQiOiI2ODgwODkxMzNjZjJlMDc4YWE3ZGUxNDkiLCJ2ZXJzaW9uIjowLCJpYXQiOjE3NTYzNjM1MjksImV4cCI6MTc1NzIyNzUyOX0.0-jS_odfvIZCu_TV2ZVRYpy-IEANUG1E4Rt71aZnV1E","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"25f2f853-7bd7-4e8a-ac3d-b571ba822ebf","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"}
+Error : ReferenceError: session is not defined
+
+REQUEST DATE : August 28th 2025, 12:19:14 pm
+API URL : http://localhost:5050/api/front/booking/add
+API METHOD : POST
+API PARAMETER : {"booking_date":"2025-09-05T14:30:00.000Z","price":1233}
+API Headers : {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiIyMzQ1Njc0NTY3IiwiY291bnRyeV9jb2RlIjoiKzkxIiwiaWQiOiI2ODgwODkxMzNjZjJlMDc4YWE3ZGUxNDkiLCJ2ZXJzaW9uIjowLCJpYXQiOjE3NTYzNjM1MjksImV4cCI6MTc1NzIyNzUyOX0.0-jS_odfvIZCu_TV2ZVRYpy-IEANUG1E4Rt71aZnV1E","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"ffeb7e93-5073-4b4f-8a05-cbc26a9d3d4f","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"}
+Error : ReferenceError: session is not defined
+
+REQUEST DATE : August 28th 2025, 12:20:33 pm
+API URL : http://localhost:5050/api/front/booking/add
+API METHOD : POST
+API PARAMETER : {"booking_date":"2025-09-05T14:30:00.000Z","price":1233}
+API Headers : {"content-type":"application/json","authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1iZXIiOiIyMzQ1Njc0NTY3IiwiY291bnRyeV9jb2RlIjoiKzkxIiwiaWQiOiI2ODgwODkxMzNjZjJlMDc4YWE3ZGUxNDkiLCJ2ZXJzaW9uIjowLCJpYXQiOjE3NTYzNjM1MjksImV4cCI6MTc1NzIyNzUyOX0.0-jS_odfvIZCu_TV2ZVRYpy-IEANUG1E4Rt71aZnV1E","user-agent":"PostmanRuntime/7.37.3","accept":"*/*","cache-control":"no-cache","postman-token":"f3bb2b58-9b89-4adf-b3b7-b3a221d4d5d1","host":"localhost:5050","accept-encoding":"gzip, deflate, br","connection":"keep-alive","content-length":"65"}
+Error : ReferenceError: length is not defined
+
