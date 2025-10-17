@@ -18,7 +18,12 @@ const MessageSchema = mongoose.Schema(
         content:
         {
             type: String,
-            required: true,
+            default: ""
+        },
+        media_type: {
+            type: String,
+            enum: ["text", "image", "video", "file"],
+            default: "text",
         },
     },
     { timestamps: true }

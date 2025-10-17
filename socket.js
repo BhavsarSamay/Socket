@@ -248,6 +248,49 @@ module.exports = {
             }
         }
 
+        const send_message = async (object) => {
+            try {
+              let new_message = "";
+          
+              if (object.message_type === "image") {
+                if (!object.message || typeof object.message !== "string") {
+                  throw new Error("Invalid image payload");
+                }
+          
+                let base64Data = object.message;
+          
+                if (base64Data.includes("base64,")) {
+                  base64Data = base64Data.split("base64,")[1];
+                }
+          
+                const buffer = Buffer.from(base64Data, "base64");
+          
+                const uploadsDir = path.join(__dirname, "./uploads/chat");
+                await fs.promises.mkdir(uploadsDir, { recursive: true });
+          
+                const filename = `${Date.now()}.webp`;
+                const filePath = path.join(uploadsDir, filename);
+          
+                await sharp(buffer).webp({ quality: 80 }).toFile(filePath);
+          
+                new_message = (process.env.SITE_URL || "/") + "uploads/chat/" + filename;
+              } else {
+                new_message = object.message;
+              }
+          
+              let messageDoc = await ChatMessage.create({
+                user_id: object.user_id,
+                room_id: object.room_id,
+                message: new_message,
+                message_type: object.message_type,
+              });
+          
+              return messageDoc;
+            } catch (error) {
+              return false;
+            }
+          };
+
         // You should add event listeners here:
         io.on("connection", async (socket) => {
             const handshake = socket.handshake;
@@ -267,13 +310,17 @@ module.exports = {
             }
 
             socket.user_id = userData._id.toString();
+            socket.join(socket.user_id);
             socket.user = userData;
+            // console.log("Socket Rooms", socket.rooms)
+            // console.log("Logging io", io.sockets.adapter.sids)
+            // console.log("After Join", socket)
+
 
             let sockets = onlineUsers.get(socket.user_id) || new Set();
             sockets.add(socket.id);
             onlineUsers.set(socket.user_id, sockets);
 
-            console.log(onlineUsers);
 
             socket.on("group_open", async ({ group_id }) => {
                 socket.chat_with = group_id?.toString();
@@ -288,7 +335,9 @@ module.exports = {
             });
 
             socket.on("message", async ({ to, content }) => {
+                io.to(to).emit("ack_message", content);
 
+                console.log("reached")
                 console.log("Message received:", to, content);
                 try {
 
@@ -305,6 +354,7 @@ module.exports = {
                         });
                     }
 
+                    const messageObj= send_message()
                     const message = await MessageModel.create({
                         from: socket.user_id,
                         to: new mongoose.Types.ObjectId(to),
@@ -314,12 +364,13 @@ module.exports = {
                     const payloadBase = {
                         _id: message._id,
                         sender: socket.user_id,
-                        receiver: to
+                        receiver: to,
+                        content: message.content
                     }
 
 
                     const socketIds = onlineUsers.get(to) || new Set();
-                    console.log("socketIds", socketIds)
+                    console.log(socketIds, "Socket IDs")
 
                     for (const socketId of socketIds) {
                         const receiverSocket = io.sockets.sockets.get(socketId);
@@ -333,7 +384,13 @@ module.exports = {
                             //     sender: socket.user_id,
                             //     receiver: to
                             // });
-                            if (isChatOpen && socketId !== socket.id) {
+                            // if (isChatOpen && socketId !== socket.id) {
+                            //     receiverSocket.emit("ack_message", {
+                            //         ...payloadBase,
+                            //         is_self: isSelf,
+                            //     });
+                            if (socketId !== socket.id) {
+
                                 receiverSocket.emit("ack_message", {
                                     ...payloadBase,
                                     is_self: isSelf,
@@ -380,6 +437,7 @@ module.exports = {
 
             socket.on("group_history", async ({ group_id }) => {
                 try {
+                    console.log("Group id", group_id)
                     if (!mongoose.Types.ObjectId.isValid(group_id)) {
                         return socket.emit("ack_group_history", {
                             error: "Invalid group ID",
@@ -632,10 +690,10 @@ module.exports = {
                     // socket.emit("ack_group_message", { ...payloadBase, isSelf: true });
 
                     const groupMembers = await GroupMemberModel.find({ group_id: group._id });
-
+                    
                     for (const member of groupMembers) {
                         const memberId = member.member.toString();
-                        const memberSocketIds = onlineUsers.get(member.member.toString()) || new Set();
+                        // const memberSocketIds = onlineUsers.get(member.member.toString()) || new Set();
                         for (const socketId of memberSocketIds) {
 
                             const memberSocket = io.sockets.sockets.get(socketId);
@@ -666,7 +724,7 @@ module.exports = {
                                                 upsert: true,
                                                 new: true,
                                             }
-                                        );  
+                                        );
                                     }
                                 }
                             }
