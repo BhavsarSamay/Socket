@@ -300,7 +300,6 @@ module.exports = {
 
             const decoded = jwt.verify(bearerToken, process.env.JWT_KEY);
             const { id } = decoded;
-            console.log("at the")
             let userData = await UserModel.findOne({ _id: id })
 
             if (!userData || decoded.version !== userData.version || userData.status != 1) {
@@ -313,7 +312,6 @@ module.exports = {
             console.log("Socket Rooms", socket.rooms)
             socket.on("chat_open", async ({ to_user }) => {
                 socket.chat_with = to_user?.toString();
-                // console.log("socket chat", socket.chat_with)
                 await chat_history(socket, to_user)
             });
             // socket.on("message", async ({ to, content, type = "text" }) => {
@@ -392,7 +390,6 @@ module.exports = {
 
                     // Await here!
                     const messageDoc = await send_message(payloadBase);
-                    console.log("messageDoc", messageDoc);
 
                     if (!messageDoc) {
                         return socket.emit("ack_message", { error: "Failed to save message" });
